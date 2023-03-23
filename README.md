@@ -13,7 +13,7 @@ Utilizing SQL to structure the Data in preparation for visualization. Data conta
 # Pycaret
 Pycaret will be utilized for 2 main purposes.
 1) Mainly to create a predictive model for the prediction of AirBnB prices
-2) For Quick analysis of the data taking note of feature importance and other insights for later visualization
+2) For quick analysis of the data taking note of feature importance and other insights for later visualization
 
 # Building Visualization
 Selecting a tool for visualization. Ease of use, Preference
