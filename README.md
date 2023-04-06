@@ -17,7 +17,6 @@ For this project SQL will be mainly utilized for structuring the Data in prepara
 <img src="SSIS.gif" align="center" width="100%">
 </div>
 
-
 2) Create a star schema
 3) Manage views for later visualization	
 
