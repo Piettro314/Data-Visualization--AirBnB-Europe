@@ -14,7 +14,7 @@ For this project SQL will be mainly utilized for structuring the Data in prepara
 * TO import into the SQL database a Sequel Server Integration Services package was utilized
 
 <div>
-<img src="SSIS.gif" align="center" width="100%">
+<img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/SSIS.gif" align="center">
 </div>
 
 2) Create a star schema
