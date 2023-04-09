@@ -14,7 +14,7 @@ For this project SQL will be mainly utilized for structuring the Data in prepara
 * To import into the SQL database a Sequel Server Integration Services (SSIS) package was utilized
 
 <div>
-<img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/SSIS.gif" align="center">
+<img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/SSIS2.gif" align="center">
 </div>
 <p>
 What is the rationale for using SSIS?
