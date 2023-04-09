@@ -16,7 +16,9 @@ For this project SQL will be mainly utilized for structuring the Data in prepara
 <div>
 <img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/SSIS.gif" align="center">
 </div>
+<p>
 What is the rationale for using SSIS?
+</p>
 <p>
 SSIS offers a broad range of transformation functions that are useful for data transformation, cleaning, and enhancement. In particular, SSIS provides a for loop container and an Execute SQL task, which can be beneficial. The primary objective of using SSIS is to create a star schema, which consists of a fact table containing a vast amount of data, the main source of the data, and smaller dimension tables that contain all of the descriptive information about the data in the fact table.
 </p>
@@ -24,7 +26,7 @@ SSIS offers a broad range of transformation functions that are useful for data t
 Star schemas enable data to be stored efficiently for quick querying by minimizing the number of joins required to retrieve data. Additionally, they establish a clear and straightforward structure for querying.
 </p>
 
-### Kimball Methodology
+### Techniques
 
 1) The use of CTE and Case Statements within SQL commands, as demonstrated in the example below, was employed to create identified dimensions in the SSIS package that utilized dimensional modeling.
 
