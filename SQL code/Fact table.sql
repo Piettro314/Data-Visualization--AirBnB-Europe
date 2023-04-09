@@ -5,22 +5,22 @@ IF NOT EXISTS(SELECT *
 			)
 exec('CREATE TABLE f.europeBnB (
     [european_cityID] bigint,
-    [lng] float,
-    [lat] float,
+    [lng] varchar(50),
+    [lat] varchar(50),
     [room_typeID] bigint,
-    [bedrooms] bigint,
-    [person_capacity] bigint,
-    [multi] bigint,
-    [biz] bigint,
-    [distance_from_centreId] float,
-    [distance_from_metroID] float,
+    [bedrooms] real,
+    [person_capacity] smallint,
+    [multi] smallint,
+    [biz] real,
     [cleanliness_rating] bigint,
     [attraction_indexID] float,
     [resturant_indexID] float,
     [host_is_superhost] int,
     [guest_satisfaction] bigint,
     [cost per night cad] float,
-	[listing_count] int
+    [listing_count] int,
+    [distance_from_centre] real,
+    [distance_from_metro] real
 
     CONSTRAINT fk_room_typeID FOREIGN KEY (room_typeID)
 	REFERENCES [dim].[roomtype] ([key_room_typeID]),
@@ -40,11 +40,11 @@ exec('CREATE TABLE f.europeBnB (
 	CONSTRAINT fk_cleanliness_rating FOREIGN KEY (cleanliness_rating)
     REFERENCES [dim].[cleanliness_rating] ([key_cleanliness_ratingID]),
 
-	CONSTRAINT fk_distance_from_centreId FOREIGN KEY (distance_from_centreId)
-    REFERENCES [dim].[distance_from_city_centre] ([key_distance_from_city_centreID]),
+	CONSTRAINT fk_distance_from_centreId FOREIGN KEY (distance_from_centre)
+    REFERENCES [dim].[distance_from_city_centre] ([key_distance_from_city_centre]),
 
-	CONSTRAINT fk_distance_from_metroID FOREIGN KEY (distance_from_metroID)
-    REFERENCES [dim].[distance_from_metro] ([key_distance_from_metroID]),
+	CONSTRAINT fk_distance_from_metroID FOREIGN KEY (distance_from_metro)
+    REFERENCES [dim].[distance_from_metro] ([key_distance_from_metro]),
 
 	CONSTRAINT fk_cost_per_night FOREIGN KEY ([cost per night cad])
     REFERENCES [dim].[stats] (cost_per_nightID)
