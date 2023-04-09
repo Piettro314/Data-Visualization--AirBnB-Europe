@@ -4,8 +4,7 @@ as
 Select Distinct [dist] as 'distance_from_city_centre'
 FROM [stg].[fulldataset]
 )
-Select  ROW_NUMBER() over(order by [distance_from_city_centre]) as 'key_distance_from_city_centreID'
-	   ,[distance_from_city_centre] as 'distance_from_city_centre'
+Select  [distance_from_city_centre] as 'key_distance_from_city_centre'
 	   ,(case 
 		When distance_from_city_centre >= 25.0 then 'Approx 25km'
 		When distance_from_city_centre >=15.0 then 'Between 15km and 25km'

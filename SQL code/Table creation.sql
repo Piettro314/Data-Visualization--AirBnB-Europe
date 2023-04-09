@@ -50,11 +50,10 @@ IF NOT EXISTS(SELECT [TABLE_NAME]
 				FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES
 				WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'distance_from_city_centre')
 exec('CREATE TABLE dim.distance_from_city_centre (
-    [key_distance_from_city_centreID] float,
     [distance_from_city_centre_text] varchar(21),
-    [distance_from_city_centre] float
+    [key_distance_from_city_centre] real
 
-	CONSTRAINT pk_distance_from_city_centre PRIMARY KEY (key_distance_from_city_centreID ASC)
+	CONSTRAINT pk_distance_from_city_centre PRIMARY KEY (key_distance_from_city_centre ASC)
 )'
 );
 GO
@@ -62,9 +61,8 @@ IF NOT EXISTS(SELECT [TABLE_NAME]
 				FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES
 				WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimdistance_from_city_centre')
 exec('CREATE TABLE err.dimdistance_from_city_centre (
-    [key_distance_from_city_centreID] float,
     [distance_from_city_centre_text] varchar(21),
-    [distance_from_city_centre] float,
+    [key_distance_from_city_centre] real,
 	[ErrorCode] int,
 	[ErrorColumn] int
 )')
@@ -74,11 +72,10 @@ IF NOT EXISTS(SELECT [TABLE_NAME]
 				FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES
 				WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'distance_from_metro')
 exec('CREATE TABLE dim.distance_from_metro (
-    [key_distance_from_metroID] float,
     [distance_from_metro_text] varchar(20),
-    [distance_from_metro] float
+    [key_distance_from_metro] real
 
-	CONSTRAINT pk_distance_from_metro  PRIMARY KEY (key_distance_from_metroID ASC)
+	CONSTRAINT pk_distance_from_metro  PRIMARY KEY (key_distance_from_metro ASC)
 )'
 );
 GO
@@ -86,9 +83,8 @@ IF NOT EXISTS(SELECT [TABLE_NAME]
 				FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES
 				WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimdistance_from_metro')
 exec('CREATE TABLE err.dimdistance_from_metro (
-    [key_distance_from_metroID] float,
     [distance_from_metro_text] varchar(20),
-    [distance_from_metro] float,
+    [key_distance_from_metro] real,
 	[ErrorCode] int,
 	[ErrorColumn] int
 )')

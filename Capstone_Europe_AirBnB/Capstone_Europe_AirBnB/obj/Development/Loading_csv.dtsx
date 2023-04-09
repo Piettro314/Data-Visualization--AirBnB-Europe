@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="85"
-  DTS:VersionGUID="{4D2D1DB1-3247-41C9-AAFA-99C547C2DF4B}">
+  DTS:VersionBuild="97"
+  DTS:VersionGUID="{83AFE400-68EE-4CA1-A6FB-6E31DAAA2602}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -479,7 +479,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="EuroBnbViz"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -495,7 +495,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="EuroVizWeekday"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -511,7 +511,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="EuroVizWeekend"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="3">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -526,6 +526,7 @@
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:DelayValidation="True"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{70E31A0B-86BA-4861-A36D-80F434B8AF30}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -1106,7 +1107,7 @@ Order by 1</property>
                       <inputColumns>
                         <inputColumn
                           refId="Package\Dimensions\Dim cleanliness rating\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[key_cleanliness_ratingID]"
-                          cachedDataType="i8"
+                          cachedDataType="r4"
                           cachedName="key_cleanliness_ratingID"
                           externalMetadataColumnId="Package\Dimensions\Dim cleanliness rating\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[key_cleanliness_ratingID]"
                           lineageId="Package\Dimensions\Dim cleanliness rating\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_cleanliness_ratingID]" />
@@ -1233,7 +1234,7 @@ Order by 1</property>
                       <inputColumns>
                         <inputColumn
                           refId="Package\Dimensions\Dim cleanliness rating\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[key_cleanliness_ratingID]"
-                          cachedDataType="i8"
+                          cachedDataType="r4"
                           cachedName="key_cleanliness_ratingID"
                           externalMetadataColumnId="Package\Dimensions\Dim cleanliness rating\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[key_cleanliness_ratingID]"
                           lineageId="Package\Dimensions\Dim cleanliness rating\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_cleanliness_ratingID]" />
@@ -1383,7 +1384,7 @@ Order by 1</property>
                       <outputColumns>
                         <outputColumn
                           refId="Package\Dimensions\Dim cleanliness rating\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_cleanliness_ratingID]"
-                          dataType="i8"
+                          dataType="r4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Dimensions\Dim cleanliness rating\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_cleanliness_ratingID]"
@@ -1406,7 +1407,7 @@ Order by 1</property>
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Dimensions\Dim cleanliness rating\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_cleanliness_ratingID]"
-                          dataType="i8"
+                          dataType="r4"
                           name="key_cleanliness_ratingID" />
                         <externalMetadataColumn
                           refId="Package\Dimensions\Dim cleanliness rating\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cleanliness_rating_text]"
@@ -1423,7 +1424,7 @@ Order by 1</property>
                       <outputColumns>
                         <outputColumn
                           refId="Package\Dimensions\Dim cleanliness rating\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_cleanliness_ratingID]"
-                          dataType="i8"
+                          dataType="r4"
                           lineageId="Package\Dimensions\Dim cleanliness rating\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_cleanliness_ratingID]"
                           name="key_cleanliness_ratingID" />
                         <outputColumn
@@ -1553,12 +1554,6 @@ Order by 1</property>
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[key_distance_from_city_centreID]"
-                          cachedDataType="r8"
-                          cachedName="key_distance_from_city_centreID"
-                          externalMetadataColumnId="Package\Dimensions\Dim distance from center\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_city_centreID]"
-                          lineageId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_city_centreID]" />
-                        <inputColumn
                           refId="Package\Dimensions\Dim distance from center\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[distance_from_city_centre_text]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -1567,18 +1562,14 @@ Order by 1</property>
                           externalMetadataColumnId="Package\Dimensions\Dim distance from center\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_city_centre_text]"
                           lineageId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_city_centre_text]" />
                         <inputColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[distance_from_city_centre]"
-                          cachedDataType="r8"
-                          cachedName="distance_from_city_centre"
-                          externalMetadataColumnId="Package\Dimensions\Dim distance from center\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_city_centre]"
-                          lineageId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_city_centre]" />
+                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[key_distance_from_city_centre]"
+                          cachedDataType="r4"
+                          cachedName="key_distance_from_city_centre"
+                          externalMetadataColumnId="Package\Dimensions\Dim distance from center\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_city_centre]"
+                          lineageId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_city_centre]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_city_centreID]"
-                          dataType="r8"
-                          name="key_distance_from_city_centreID" />
                         <externalMetadataColumn
                           refId="Package\Dimensions\Dim distance from center\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_city_centre_text]"
                           codePage="1252"
@@ -1586,9 +1577,9 @@ Order by 1</property>
                           length="21"
                           name="distance_from_city_centre_text" />
                         <externalMetadataColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_city_centre]"
-                          dataType="r8"
-                          name="distance_from_city_centre" />
+                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_city_centre]"
+                          dataType="r4"
+                          name="key_distance_from_city_centre" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1690,6 +1681,20 @@ Order by 1</property>
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
+                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[distance_from_city_centre_text]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="21"
+                          cachedName="distance_from_city_centre_text"
+                          externalMetadataColumnId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_city_centre_text]"
+                          lineageId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_city_centre_text]" />
+                        <inputColumn
+                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[key_distance_from_city_centre]"
+                          cachedDataType="r4"
+                          cachedName="key_distance_from_city_centre"
+                          externalMetadataColumnId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_city_centre]"
+                          lineageId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_city_centre]" />
+                        <inputColumn
                           refId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
                           cachedDataType="i4"
                           cachedName="ErrorCode"
@@ -1701,29 +1706,19 @@ Order by 1</property>
                           cachedName="ErrorColumn"
                           externalMetadataColumnId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
                           lineageId="Package\Dimensions\Dim distance from center\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
-                        <inputColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[key_distance_from_city_centreID]"
-                          cachedDataType="r8"
-                          cachedName="key_distance_from_city_centreID"
-                          externalMetadataColumnId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_city_centreID]"
-                          lineageId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_city_centreID]" />
-                        <inputColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[distance_from_city_centre_text]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="21"
-                          cachedName="distance_from_city_centre_text"
-                          externalMetadataColumnId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_city_centre_text]"
-                          lineageId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_city_centre_text]" />
-                        <inputColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[distance_from_city_centre]"
-                          cachedDataType="r8"
-                          cachedName="distance_from_city_centre"
-                          externalMetadataColumnId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_city_centre]"
-                          lineageId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_city_centre]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_city_centre_text]"
+                          codePage="1252"
+                          dataType="str"
+                          length="21"
+                          name="distance_from_city_centre_text" />
+                        <externalMetadataColumn
+                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_city_centre]"
+                          dataType="r4"
+                          name="key_distance_from_city_centre" />
                         <externalMetadataColumn
                           refId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
                           dataType="i4"
@@ -1732,20 +1727,6 @@ Order by 1</property>
                           refId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
                           dataType="i4"
                           name="ErrorColumn" />
-                        <externalMetadataColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_city_centreID]"
-                          dataType="r8"
-                          name="key_distance_from_city_centreID" />
-                        <externalMetadataColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_city_centre_text]"
-                          codePage="1252"
-                          dataType="str"
-                          length="21"
-                          name="distance_from_city_centre_text" />
-                        <externalMetadataColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_city_centre]"
-                          dataType="r8"
-                          name="distance_from_city_centre" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1805,8 +1786,7 @@ as
 Select Distinct [dist] as 'distance_from_city_centre'
 FROM [stg].[fulldataset]
 )
-Select  ROW_NUMBER() over(order by [distance_from_city_centre]) as 'key_distance_from_city_centreID'
-	   ,[distance_from_city_centre] as 'distance_from_city_centre'
+Select  [distance_from_city_centre] as 'key_distance_from_city_centre'
 	   ,(case 
 		When distance_from_city_centre &gt;= 25.0 then 'Approx 25km'
 		When distance_from_city_centre &gt;=15.0 then 'Between 15km and 25km'
@@ -1853,15 +1833,6 @@ Order by 1</property>
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_city_centreID]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_distance_from_city_centreID]"
-                          lineageId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_city_centreID]"
-                          name="key_distance_from_city_centreID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_city_centre_text]"
                           codePage="1252"
                           dataType="str"
@@ -1873,21 +1844,17 @@ Order by 1</property>
                           name="distance_from_city_centre_text"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_city_centre]"
-                          dataType="r8"
+                          refId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_city_centre]"
+                          dataType="r4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance_from_city_centre]"
-                          lineageId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_city_centre]"
-                          name="distance_from_city_centre"
+                          externalMetadataColumnId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_distance_from_city_centre]"
+                          lineageId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_city_centre]"
+                          name="key_distance_from_city_centre"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_distance_from_city_centreID]"
-                          dataType="i8"
-                          name="key_distance_from_city_centreID" />
                         <externalMetadataColumn
                           refId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance_from_city_centre_text]"
                           codePage="1252"
@@ -1895,9 +1862,9 @@ Order by 1</property>
                           length="21"
                           name="distance_from_city_centre_text" />
                         <externalMetadataColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance_from_city_centre]"
-                          dataType="r8"
-                          name="distance_from_city_centre" />
+                          refId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_distance_from_city_centre]"
+                          dataType="r4"
+                          name="key_distance_from_city_centre" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1906,15 +1873,10 @@ Order by 1</property>
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_distance_from_city_centreID]"
-                          dataType="i8"
-                          lineageId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_distance_from_city_centreID]"
-                          name="key_distance_from_city_centreID" />
-                        <outputColumn
-                          refId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance_from_city_centre]"
-                          dataType="r8"
-                          lineageId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance_from_city_centre]"
-                          name="distance_from_city_centre" />
+                          refId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_distance_from_city_centre]"
+                          dataType="r4"
+                          lineageId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_distance_from_city_centre]"
+                          name="key_distance_from_city_centre" />
                         <outputColumn
                           refId="Package\Dimensions\Dim distance from center\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance_from_city_centre_text]"
                           codePage="1252"
@@ -2042,12 +2004,6 @@ Order by 1</property>
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[key_distance_from_metroID]"
-                          cachedDataType="r8"
-                          cachedName="key_distance_from_metroID"
-                          externalMetadataColumnId="Package\Dimensions\Dim distance from metro\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_metroID]"
-                          lineageId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_metroID]" />
-                        <inputColumn
                           refId="Package\Dimensions\Dim distance from metro\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[distance_from_metro_text]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -2056,18 +2012,14 @@ Order by 1</property>
                           externalMetadataColumnId="Package\Dimensions\Dim distance from metro\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_metro_text]"
                           lineageId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_metro_text]" />
                         <inputColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[distance_from_metro]"
-                          cachedDataType="r8"
-                          cachedName="distance_from_metro"
-                          externalMetadataColumnId="Package\Dimensions\Dim distance from metro\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_metro]"
-                          lineageId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_metro]" />
+                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[key_distance_from_metro]"
+                          cachedDataType="r4"
+                          cachedName="key_distance_from_metro"
+                          externalMetadataColumnId="Package\Dimensions\Dim distance from metro\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_metro]"
+                          lineageId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_metro]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_metroID]"
-                          dataType="r8"
-                          name="key_distance_from_metroID" />
                         <externalMetadataColumn
                           refId="Package\Dimensions\Dim distance from metro\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_metro_text]"
                           codePage="1252"
@@ -2075,9 +2027,9 @@ Order by 1</property>
                           length="20"
                           name="distance_from_metro_text" />
                         <externalMetadataColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_metro]"
-                          dataType="r8"
-                          name="distance_from_metro" />
+                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_metro]"
+                          dataType="r4"
+                          name="key_distance_from_metro" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2179,6 +2131,20 @@ Order by 1</property>
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
+                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[distance_from_metro_text]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="distance_from_metro_text"
+                          externalMetadataColumnId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_metro_text]"
+                          lineageId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_metro_text]" />
+                        <inputColumn
+                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[key_distance_from_metro]"
+                          cachedDataType="r4"
+                          cachedName="key_distance_from_metro"
+                          externalMetadataColumnId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_metro]"
+                          lineageId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_metro]" />
+                        <inputColumn
                           refId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
                           cachedDataType="i4"
                           cachedName="ErrorCode"
@@ -2190,29 +2156,19 @@ Order by 1</property>
                           cachedName="ErrorColumn"
                           externalMetadataColumnId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
                           lineageId="Package\Dimensions\Dim distance from metro\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
-                        <inputColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[key_distance_from_metroID]"
-                          cachedDataType="r8"
-                          cachedName="key_distance_from_metroID"
-                          externalMetadataColumnId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_metroID]"
-                          lineageId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_metroID]" />
-                        <inputColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[distance_from_metro_text]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="20"
-                          cachedName="distance_from_metro_text"
-                          externalMetadataColumnId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_metro_text]"
-                          lineageId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_metro_text]" />
-                        <inputColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[distance_from_metro]"
-                          cachedDataType="r8"
-                          cachedName="distance_from_metro"
-                          externalMetadataColumnId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_metro]"
-                          lineageId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_metro]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_metro_text]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="distance_from_metro_text" />
+                        <externalMetadataColumn
+                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_metro]"
+                          dataType="r4"
+                          name="key_distance_from_metro" />
                         <externalMetadataColumn
                           refId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
                           dataType="i4"
@@ -2221,20 +2177,6 @@ Order by 1</property>
                           refId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
                           dataType="i4"
                           name="ErrorColumn" />
-                        <externalMetadataColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[key_distance_from_metroID]"
-                          dataType="r8"
-                          name="key_distance_from_metroID" />
-                        <externalMetadataColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_metro_text]"
-                          codePage="1252"
-                          dataType="str"
-                          length="20"
-                          name="distance_from_metro_text" />
-                        <externalMetadataColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_metro]"
-                          dataType="r8"
-                          name="distance_from_metro" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2294,8 +2236,7 @@ as
 Select Distinct metro_dist as 'distance_from_metro'
 FROM [stg].[fulldataset]
 )
-Select  ROW_NUMBER() over(order by distance_from_metro)*102 as 'key_distance_from_metroID'
-		,distance_from_metro as 'distance_from_metro'
+Select  distance_from_metro as 'key_distance_from_metro'
 		,(case 
 			When distance_from_metro &gt;= 14.0 then 'Approx 14km'
 			When distance_from_metro &gt;=9.0 then 'Between 9km and 13km'
@@ -2342,15 +2283,6 @@ Order by 1</property>
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_metroID]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_distance_from_metroID]"
-                          lineageId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_metroID]"
-                          name="key_distance_from_metroID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_metro_text]"
                           codePage="1252"
                           dataType="str"
@@ -2362,21 +2294,17 @@ Order by 1</property>
                           name="distance_from_metro_text"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_metro]"
-                          dataType="r8"
+                          refId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_metro]"
+                          dataType="r4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance_from_metro]"
-                          lineageId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_metro]"
-                          name="distance_from_metro"
+                          externalMetadataColumnId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_distance_from_metro]"
+                          lineageId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_distance_from_metro]"
+                          name="key_distance_from_metro"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_distance_from_metroID]"
-                          dataType="i8"
-                          name="key_distance_from_metroID" />
                         <externalMetadataColumn
                           refId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance_from_metro_text]"
                           codePage="1252"
@@ -2384,9 +2312,9 @@ Order by 1</property>
                           length="20"
                           name="distance_from_metro_text" />
                         <externalMetadataColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance_from_metro]"
-                          dataType="r8"
-                          name="distance_from_metro" />
+                          refId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_distance_from_metro]"
+                          dataType="r4"
+                          name="key_distance_from_metro" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2395,15 +2323,10 @@ Order by 1</property>
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_distance_from_metroID]"
-                          dataType="i8"
-                          lineageId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_distance_from_metroID]"
-                          name="key_distance_from_metroID" />
-                        <outputColumn
-                          refId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance_from_metro]"
-                          dataType="r8"
-                          lineageId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance_from_metro]"
-                          name="distance_from_metro" />
+                          refId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_distance_from_metro]"
+                          dataType="r4"
+                          lineageId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_distance_from_metro]"
+                          name="key_distance_from_metro" />
                         <outputColumn
                           refId="Package\Dimensions\Dim distance from metro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance_from_metro_text]"
                           codePage="1252"
@@ -2532,7 +2455,7 @@ Order by 1</property>
                       <inputColumns>
                         <inputColumn
                           refId="Package\Dimensions\Dim guest_satisfaction_overall\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[key_guest_satisfaction_overallID]"
-                          cachedDataType="i8"
+                          cachedDataType="r4"
                           cachedName="key_guest_satisfaction_overallID"
                           externalMetadataColumnId="Package\Dimensions\Dim guest_satisfaction_overall\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[key_guest_satisfaction_overallID]"
                           lineageId="Package\Dimensions\Dim guest_satisfaction_overall\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_guest_satisfaction_overallID]" />
@@ -2671,7 +2594,7 @@ Order by 1</property>
                           lineageId="Package\Dimensions\Dim guest_satisfaction_overall\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
                         <inputColumn
                           refId="Package\Dimensions\Dim guest_satisfaction_overall\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[key_guest_satisfaction_overallID]"
-                          cachedDataType="i8"
+                          cachedDataType="r4"
                           cachedName="key_guest_satisfaction_overallID"
                           externalMetadataColumnId="Package\Dimensions\Dim guest_satisfaction_overall\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[key_guest_satisfaction_overallID]"
                           lineageId="Package\Dimensions\Dim guest_satisfaction_overall\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_guest_satisfaction_overallID]" />
@@ -2809,7 +2732,7 @@ Order by 1</property>
                       <outputColumns>
                         <outputColumn
                           refId="Package\Dimensions\Dim guest_satisfaction_overall\OLE DB Source.Outputs[OLE DB Source Output].Columns[key_guest_satisfaction_overallID]"
-                          dataType="i8"
+                          dataType="r4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Dimensions\Dim guest_satisfaction_overall\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_guest_satisfaction_overallID]"
@@ -2832,7 +2755,7 @@ Order by 1</property>
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Dimensions\Dim guest_satisfaction_overall\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[key_guest_satisfaction_overallID]"
-                          dataType="i8"
+                          dataType="r4"
                           name="key_guest_satisfaction_overallID" />
                         <externalMetadataColumn
                           refId="Package\Dimensions\Dim guest_satisfaction_overall\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[guest_satisfaction_overall]"
@@ -2849,7 +2772,7 @@ Order by 1</property>
                       <outputColumns>
                         <outputColumn
                           refId="Package\Dimensions\Dim guest_satisfaction_overall\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_guest_satisfaction_overallID]"
-                          dataType="i8"
+                          dataType="r4"
                           lineageId="Package\Dimensions\Dim guest_satisfaction_overall\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[key_guest_satisfaction_overallID]"
                           name="key_guest_satisfaction_overallID" />
                         <outputColumn
@@ -4769,7 +4692,7 @@ From EuroCityCte</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{B52A48B9-5F79-4207-9B06-F9E2627243BF}"
-              SQLTask:SqlStatementSource="&#x9;Go------------------------------dim cleanliness rating---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'cleanliness_rating')&#xA;exec('CREATE TABLE dim.cleanliness_rating (&#xA;    [key_cleanliness_ratingID] bigint,&#xA;    [cleanliness_rating_text] varchar(7)&#xA;&#xA;&#xA;&#x9;CONSTRAINT pk_cleanliness_rating PRIMARY KEY (key_cleanliness_ratingID ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimcleanliness_rating')&#xA;exec('CREATE TABLE err.dimcleanliness_rating  (&#xA;    [key_cleanliness_ratingID] bigint,&#xA;    [cleanliness_rating_text] varchar(7),&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim attraction_index---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'attraction_index')&#xA;exec('CREATE TABLE dim.attraction_index (&#xA;    [key_attraction_indexID] float,&#xA;    [attraction_index_text] varchar(17),&#xA;    [attraction_index] float&#xA;&#xA;&#x9;CONSTRAINT pk_attraction_index PRIMARY KEY (key_attraction_indexID ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimattraction_index')&#xA;exec('CREATE TABLE err.dimattraction_index (&#xA;    [key_attraction_indexID] float,&#xA;    [attraction_index_text] varchar(17),&#xA;    [attraction_index] float,&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim distance from center---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'distance_from_city_centre')&#xA;exec('CREATE TABLE dim.distance_from_city_centre (&#xA;    [key_distance_from_city_centreID] float,&#xA;    [distance_from_city_centre_text] varchar(21),&#xA;    [distance_from_city_centre] float&#xA;&#xA;&#x9;CONSTRAINT pk_distance_from_city_centre PRIMARY KEY (key_distance_from_city_centreID ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimdistance_from_city_centre')&#xA;exec('CREATE TABLE err.dimdistance_from_city_centre (&#xA;    [key_distance_from_city_centreID] float,&#xA;    [distance_from_city_centre_text] varchar(21),&#xA;    [distance_from_city_centre] float,&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim distance_from_metro---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'distance_from_metro')&#xA;exec('CREATE TABLE dim.distance_from_metro (&#xA;    [key_distance_from_metroID] float,&#xA;    [distance_from_metro_text] varchar(20),&#xA;    [distance_from_metro] float&#xA;&#xA;&#x9;CONSTRAINT pk_distance_from_metro  PRIMARY KEY (key_distance_from_metroID ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimdistance_from_metro')&#xA;exec('CREATE TABLE err.dimdistance_from_metro (&#xA;    [key_distance_from_metroID] float,&#xA;    [distance_from_metro_text] varchar(20),&#xA;    [distance_from_metro] float,&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim EuroCity---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'european_city')&#xA;exec('CREATE TABLE dim.european_city (&#xA;    [key_european_cityID] bigint,&#xA;    [european_city] varchar(9)&#xA;&#xA;&#x9;CONSTRAINT pk_european_city  PRIMARY KEY (key_european_cityID ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimeuropean_city')&#xA;exec('CREATE TABLE err.dimeuropean_city (&#xA;    [key_european_cityID] bigint,&#xA;    [european_city] varchar(9),&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim guest_satisfaction_overall---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'guest_satisfaction_overall')&#xA;exec('CREATE TABLE dim.guest_satisfaction_overall (&#xA;    [key_guest_satisfaction_overallID] bigint,&#xA;    [guest_satisfaction_overall] varchar(13)&#xA;&#xA;&#x9;CONSTRAINT pk_guest_satisfaction_overall PRIMARY KEY (key_guest_satisfaction_overallID ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimguest_satisfaction_overall ')&#xA;exec('CREATE TABLE err.dimguest_satisfaction_overall (&#xA;    [key_guest_satisfaction_overallID] bigint,&#xA;    [guest_satisfaction_overall] varchar(13),&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim_resturant_index---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'resturant_index')&#xA;exec('CREATE TABLE dim.resturant_index (&#xA;    [key_resturant_indexID] float,&#xA;    [resturant_index_text] varchar(12),&#xA;    [resturant_index] float&#xA;&#xA;&#x9;CONSTRAINT pk_resturant_index PRIMARY KEY (key_resturant_indexID ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimresturant_index ')&#xA;exec('CREATE TABLE err.dimresturant_index (&#xA;    [key_resturant_indexID] float,&#xA;    [resturant_index_text] varchar(12),&#xA;    [resturant_index] float,&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim_roomtype---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'roomtype')&#xA;exec('CREATE TABLE dim.roomtype (&#xA;    [key_room_typeID] bigint,&#xA;    [room_type] varchar(15)&#xA;&#xA;&#x9;CONSTRAINT pk_room_type PRIMARY KEY (key_room_typeID ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimroomtype ')&#xA;exec('CREATE TABLE err.dimroomtype (&#xA;    [key_room_typeID] bigint,&#xA;    [room_type] varchar(15),&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim_STATS---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'stats')&#xA;exec('CREATE TABLE dim.stats (&#xA;    [cost_per_nightID] float,&#xA;    [zscore] float&#xA;&#xA;&#x9;CONSTRAINT pk_key_stats PRIMARY KEY ([cost_per_nightID] ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimstats')&#xA;exec('CREATE TABLE err.dimstats (&#xA;    cost_per_nightID float,&#xA;    [zscore] float,&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="&#x9;Go------------------------------dim cleanliness rating---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'cleanliness_rating')&#xA;exec('CREATE TABLE dim.cleanliness_rating (&#xA;    [key_cleanliness_ratingID] bigint,&#xA;    [cleanliness_rating_text] varchar(7)&#xA;&#xA;&#xA;&#x9;CONSTRAINT pk_cleanliness_rating PRIMARY KEY (key_cleanliness_ratingID ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimcleanliness_rating')&#xA;exec('CREATE TABLE err.dimcleanliness_rating  (&#xA;    [key_cleanliness_ratingID] bigint,&#xA;    [cleanliness_rating_text] varchar(7),&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim attraction_index---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'attraction_index')&#xA;exec('CREATE TABLE dim.attraction_index (&#xA;    [key_attraction_indexID] float,&#xA;    [attraction_index_text] varchar(17),&#xA;    [attraction_index] float&#xA;&#xA;&#x9;CONSTRAINT pk_attraction_index PRIMARY KEY (key_attraction_indexID ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimattraction_index')&#xA;exec('CREATE TABLE err.dimattraction_index (&#xA;    [key_attraction_indexID] float,&#xA;    [attraction_index_text] varchar(17),&#xA;    [attraction_index] float,&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim distance from center---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'distance_from_city_centre')&#xA;exec('CREATE TABLE dim.distance_from_city_centre (&#xA;    [distance_from_city_centre_text] varchar(21),&#xA;    [key_distance_from_city_centre] real&#xA;&#xA;&#x9;CONSTRAINT pk_distance_from_city_centre PRIMARY KEY (key_distance_from_city_centre ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimdistance_from_city_centre')&#xA;exec('CREATE TABLE err.dimdistance_from_city_centre (&#xA;    [distance_from_city_centre_text] varchar(21),&#xA;    [key_distance_from_city_centre] real,&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim distance_from_metro---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'distance_from_metro')&#xA;exec('CREATE TABLE dim.distance_from_metro (&#xA;    [distance_from_metro_text] varchar(20),&#xA;    [key_distance_from_metro] real&#xA;&#xA;&#x9;CONSTRAINT pk_distance_from_metro  PRIMARY KEY (key_distance_from_metro ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimdistance_from_metro')&#xA;exec('CREATE TABLE err.dimdistance_from_metro (&#xA;    [distance_from_metro_text] varchar(20),&#xA;    [key_distance_from_metro] real,&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim EuroCity---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'european_city')&#xA;exec('CREATE TABLE dim.european_city (&#xA;    [key_european_cityID] bigint,&#xA;    [european_city] varchar(9)&#xA;&#xA;&#x9;CONSTRAINT pk_european_city  PRIMARY KEY (key_european_cityID ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimeuropean_city')&#xA;exec('CREATE TABLE err.dimeuropean_city (&#xA;    [key_european_cityID] bigint,&#xA;    [european_city] varchar(9),&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim guest_satisfaction_overall---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'guest_satisfaction_overall')&#xA;exec('CREATE TABLE dim.guest_satisfaction_overall (&#xA;    [key_guest_satisfaction_overallID] bigint,&#xA;    [guest_satisfaction_overall] varchar(13)&#xA;&#xA;&#x9;CONSTRAINT pk_guest_satisfaction_overall PRIMARY KEY (key_guest_satisfaction_overallID ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimguest_satisfaction_overall ')&#xA;exec('CREATE TABLE err.dimguest_satisfaction_overall (&#xA;    [key_guest_satisfaction_overallID] bigint,&#xA;    [guest_satisfaction_overall] varchar(13),&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim_resturant_index---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'resturant_index')&#xA;exec('CREATE TABLE dim.resturant_index (&#xA;    [key_resturant_indexID] float,&#xA;    [resturant_index_text] varchar(12),&#xA;    [resturant_index] float&#xA;&#xA;&#x9;CONSTRAINT pk_resturant_index PRIMARY KEY (key_resturant_indexID ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimresturant_index ')&#xA;exec('CREATE TABLE err.dimresturant_index (&#xA;    [key_resturant_indexID] float,&#xA;    [resturant_index_text] varchar(12),&#xA;    [resturant_index] float,&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim_roomtype---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'roomtype')&#xA;exec('CREATE TABLE dim.roomtype (&#xA;    [key_room_typeID] bigint,&#xA;    [room_type] varchar(15)&#xA;&#xA;&#x9;CONSTRAINT pk_room_type PRIMARY KEY (key_room_typeID ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimroomtype ')&#xA;exec('CREATE TABLE err.dimroomtype (&#xA;    [key_room_typeID] bigint,&#xA;    [room_type] varchar(15),&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;------------------------------dim_STATS---------------------------------&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'stats')&#xA;exec('CREATE TABLE dim.stats (&#xA;    [cost_per_nightID] float,&#xA;     [zscore] float,&#xA;       [cost_range_per_night] varchar(19)&#xA;&#xA;&#x9;CONSTRAINT pk_key_stats PRIMARY KEY ([cost_per_nightID] ASC)&#xA;)'&#xA;);&#xA;GO&#xA;IF NOT EXISTS(SELECT [TABLE_NAME] &#xA;&#x9;&#x9;&#x9;&#x9;FROM [Europe_AirBnB_DB].INFORMATION_SCHEMA.TABLES&#xA;&#x9;&#x9;&#x9;&#x9;WHERE TABLE_TYPE = 'BASE TABLE' and TABLE_NAME = 'dimstats')&#xA;exec('CREATE TABLE err.dimstats (&#xA;    [cost_per_nightID] float,&#xA;    [zscore] float,&#xA;    [cost_range_per_night] varchar(19),&#xA;&#x9;[ErrorCode] int,&#xA;&#x9;[ErrorColumn] int&#xA;)')&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -4953,13 +4876,17 @@ From EuroCityCte</property>
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[european_cityID]" />
                         <inputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lng]"
-                          cachedDataType="r8"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="lng"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lng]"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[lng]" />
                         <inputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lat]"
-                          cachedDataType="r8"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
                           cachedName="lat"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[lat]" />
@@ -4971,43 +4898,31 @@ From EuroCityCte</property>
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[room_typeID]" />
                         <inputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[bedrooms]"
-                          cachedDataType="i8"
+                          cachedDataType="r4"
                           cachedName="bedrooms"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[bedrooms]"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[bedrooms]" />
                         <inputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[person_capacity]"
-                          cachedDataType="i8"
+                          cachedDataType="i2"
                           cachedName="person_capacity"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[person_capacity]"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[person_capacity]" />
                         <inputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[multi]"
-                          cachedDataType="i8"
+                          cachedDataType="i2"
                           cachedName="multi"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[multi]"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[multi]" />
                         <inputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[biz]"
-                          cachedDataType="i8"
+                          cachedDataType="r4"
                           cachedName="biz"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[biz]"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[biz]" />
                         <inputColumn
-                          refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[distance_from_centreId]"
-                          cachedDataType="r8"
-                          cachedName="distance_from_centreId"
-                          externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_centreId]"
-                          lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_centreId]" />
-                        <inputColumn
-                          refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[distance_from_metroID]"
-                          cachedDataType="r8"
-                          cachedName="distance_from_metroID"
-                          externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_metroID]"
-                          lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_metroID]" />
-                        <inputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cleanliness_rating]"
-                          cachedDataType="i8"
+                          cachedDataType="r4"
                           cachedName="cleanliness_rating"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cleanliness_rating]"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[cleanliness_rating]" />
@@ -5031,7 +4946,7 @@ From EuroCityCte</property>
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[host_is_superhost]" />
                         <inputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[guest_satisfaction]"
-                          cachedDataType="i8"
+                          cachedDataType="r4"
                           cachedName="guest_satisfaction"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[guest_satisfaction]"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[guest_satisfaction]" />
@@ -5047,6 +4962,18 @@ From EuroCityCte</property>
                           cachedName="listing_count"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[listing_count]"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[listing_count]" />
+                        <inputColumn
+                          refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[distance_from_centre]"
+                          cachedDataType="r4"
+                          cachedName="distance_from_centre"
+                          externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_centre]"
+                          lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_centre]" />
+                        <inputColumn
+                          refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[distance_from_metro]"
+                          cachedDataType="r4"
+                          cachedName="distance_from_metro"
+                          externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_metro]"
+                          lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_metro]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5056,11 +4983,15 @@ From EuroCityCte</property>
                           name="european_cityID" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lng]"
-                          dataType="r8"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="lng" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
-                          dataType="r8"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="lat" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[room_typeID]"
@@ -5068,28 +4999,20 @@ From EuroCityCte</property>
                           name="room_typeID" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[bedrooms]"
-                          dataType="i8"
+                          dataType="r4"
                           name="bedrooms" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[person_capacity]"
-                          dataType="i8"
+                          dataType="i2"
                           name="person_capacity" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[multi]"
-                          dataType="i8"
+                          dataType="i2"
                           name="multi" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[biz]"
-                          dataType="i8"
+                          dataType="r4"
                           name="biz" />
-                        <externalMetadataColumn
-                          refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_centreId]"
-                          dataType="r8"
-                          name="distance_from_centreId" />
-                        <externalMetadataColumn
-                          refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_metroID]"
-                          dataType="r8"
-                          name="distance_from_metroID" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cleanliness_rating]"
                           dataType="i8"
@@ -5118,6 +5041,14 @@ From EuroCityCte</property>
                           refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[listing_count]"
                           dataType="i4"
                           name="listing_count" />
+                        <externalMetadataColumn
+                          refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_centre]"
+                          dataType="r4"
+                          name="distance_from_centre" />
+                        <externalMetadataColumn
+                          refId="Package\Fact table\fact euroBnB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance_from_metro]"
+                          dataType="r4"
+                          name="distance_from_metro" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -5179,8 +5110,8 @@ From EuroCityCte</property>
 	  ,f.person_capacity
 	  ,f.multi
       ,f.biz
-	  ,dc.key_distance_from_city_centreID as 'distance_from_centreId'
-      ,dm.key_distance_from_metroID as 'distance_from_metroID'
+	  ,f.dist as 'distance_from_centre'
+      ,f.metro_dist as 'distance_from_metro'
       ,f.cleanliness_rating as 'cleanliness_rating'
 	  ,ai.key_attraction_indexID as 'attraction_indexID'
       ,ri.key_resturant_indexID as 'resturant_indexID'
@@ -5198,9 +5129,9 @@ FROM [stg].[fulldataset] f
 	inner join [dim].[european_city] c
 		on f.european_city = c.european_city
 	inner join [dim].[distance_from_metro] dm
-		on f.metro_dist = dm.distance_from_metro
+	 on f.metro_dist = dm.key_distance_from_metro
 	inner join [dim].[distance_from_city_centre] dc
-		on f.dist = dc.distance_from_city_centre
+	 on f.dist = dc.key_distance_from_city_centre
 	inner join [dim].[attraction_index] ai
 		on f.attr_index = ai.attraction_index
 	inner join [dim].[resturant_index] ri
@@ -5256,19 +5187,23 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[lng]"
-                          dataType="r8"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lng]"
+                          length="50"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[lng]"
                           name="lng"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[lat]"
-                          dataType="r8"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lat]"
+                          length="50"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[lat]"
                           name="lat"
                           truncationRowDisposition="FailComponent" />
@@ -5283,7 +5218,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[bedrooms]"
-                          dataType="i8"
+                          dataType="r4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[bedrooms]"
@@ -5292,7 +5227,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[person_capacity]"
-                          dataType="i8"
+                          dataType="i2"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[person_capacity]"
@@ -5301,7 +5236,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[multi]"
-                          dataType="i8"
+                          dataType="i2"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[multi]"
@@ -5310,7 +5245,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[biz]"
-                          dataType="i8"
+                          dataType="r4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[biz]"
@@ -5318,26 +5253,8 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           name="biz"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_centreId]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance_from_centreId]"
-                          lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_centreId]"
-                          name="distance_from_centreId"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_metroID]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance_from_metroID]"
-                          lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_metroID]"
-                          name="distance_from_metroID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[cleanliness_rating]"
-                          dataType="i8"
+                          dataType="r4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cleanliness_rating]"
@@ -5373,7 +5290,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[guest_satisfaction]"
-                          dataType="i8"
+                          dataType="r4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[guest_satisfaction]"
@@ -5398,6 +5315,24 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[listing_count]"
                           name="listing_count"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_centre]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance_from_centre]"
+                          lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_centre]"
+                          name="distance_from_centre"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_metro]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance_from_metro]"
+                          lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance_from_metro]"
+                          name="distance_from_metro"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5407,11 +5342,15 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           name="european_cityID" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lng]"
-                          dataType="r8"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="lng" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[lat]"
-                          dataType="r8"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="lat" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[room_typeID]"
@@ -5419,31 +5358,23 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           name="room_typeID" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[bedrooms]"
-                          dataType="i8"
+                          dataType="r4"
                           name="bedrooms" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[person_capacity]"
-                          dataType="i8"
+                          dataType="i2"
                           name="person_capacity" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[multi]"
-                          dataType="i8"
+                          dataType="i2"
                           name="multi" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[biz]"
-                          dataType="i8"
+                          dataType="r4"
                           name="biz" />
                         <externalMetadataColumn
-                          refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance_from_centreId]"
-                          dataType="r8"
-                          name="distance_from_centreId" />
-                        <externalMetadataColumn
-                          refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance_from_metroID]"
-                          dataType="r8"
-                          name="distance_from_metroID" />
-                        <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cleanliness_rating]"
-                          dataType="i8"
+                          dataType="r4"
                           name="cleanliness_rating" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[attraction_indexID]"
@@ -5459,7 +5390,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           name="host_is_superhost" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[guest_satisfaction]"
-                          dataType="i8"
+                          dataType="r4"
                           name="guest_satisfaction" />
                         <externalMetadataColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cost per night cad]"
@@ -5469,6 +5400,14 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[listing_count]"
                           dataType="i4"
                           name="listing_count" />
+                        <externalMetadataColumn
+                          refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance_from_centre]"
+                          dataType="r4"
+                          name="distance_from_centre" />
+                        <externalMetadataColumn
+                          refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance_from_metro]"
+                          dataType="r4"
+                          name="distance_from_metro" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -5483,12 +5422,16 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           name="european_cityID" />
                         <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lng]"
-                          dataType="r8"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lng]"
                           name="lng" />
                         <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lat]"
-                          dataType="r8"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[lat]"
                           name="lat" />
                         <outputColumn
@@ -5498,37 +5441,37 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           name="room_typeID" />
                         <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[bedrooms]"
-                          dataType="i8"
+                          dataType="r4"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[bedrooms]"
                           name="bedrooms" />
                         <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[person_capacity]"
-                          dataType="i8"
+                          dataType="i2"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[person_capacity]"
                           name="person_capacity" />
                         <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[multi]"
-                          dataType="i8"
+                          dataType="i2"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[multi]"
                           name="multi" />
                         <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[biz]"
-                          dataType="i8"
+                          dataType="r4"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[biz]"
                           name="biz" />
                         <outputColumn
-                          refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance_from_centreId]"
-                          dataType="r8"
-                          lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance_from_centreId]"
-                          name="distance_from_centreId" />
+                          refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance_from_centre]"
+                          dataType="r4"
+                          lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance_from_centre]"
+                          name="distance_from_centre" />
                         <outputColumn
-                          refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance_from_metroID]"
-                          dataType="r8"
-                          lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance_from_metroID]"
-                          name="distance_from_metroID" />
+                          refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance_from_metro]"
+                          dataType="r4"
+                          lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance_from_metro]"
+                          name="distance_from_metro" />
                         <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[cleanliness_rating]"
-                          dataType="i8"
+                          dataType="r4"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[cleanliness_rating]"
                           name="cleanliness_rating" />
                         <outputColumn
@@ -5548,7 +5491,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           name="host_is_superhost" />
                         <outputColumn
                           refId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[guest_satisfaction]"
-                          dataType="i8"
+                          dataType="r4"
                           lineageId="Package\Fact table\fact euroBnB\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[guest_satisfaction]"
                           name="guest_satisfaction" />
                         <outputColumn
@@ -5608,12 +5551,12 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Fact table.PrecedenceConstraints[Constraint 2]"
+          DTS:refId="Package\Fact table.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{305EBEA9-77F7-4C9B-884E-3B1C2C36720A}"
+          DTS:DTSID="{18F940E9-DFFD-493C-AA85-AA764A867611}"
           DTS:From="Package\Fact table\Fact table creation"
           DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 2"
+          DTS:ObjectName="Constraint"
           DTS:To="Package\Fact table\fact euroBnB" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
@@ -5621,7 +5564,6 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
       DTS:refId="Package\Reset"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{B46D0C91-5B83-420A-9FF4-3C448BADA269}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -5639,6 +5581,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{90ae3c66-122c-4ded-bb1f-d433a2f0fe39}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -5656,6 +5599,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:DelayValidation="True"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{04C8047A-8719-4585-83A4-858DC011973F}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -5871,49 +5815,51 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
                           name="room_type" />
                         <externalMetadataColumn
                           refId="Package\Staging\Fulldataset\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[person_capacity]"
-                          dataType="i8"
+                          dataType="i2"
                           name="person_capacity" />
                         <externalMetadataColumn
                           refId="Package\Staging\Fulldataset\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[host_is_superhost]"
-                          codePage="1252"
-                          dataType="str"
-                          length="5"
+                          dataType="bool"
                           name="host_is_superhost" />
                         <externalMetadataColumn
                           refId="Package\Staging\Fulldataset\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[multi]"
-                          dataType="i8"
+                          dataType="i2"
                           name="multi" />
                         <externalMetadataColumn
                           refId="Package\Staging\Fulldataset\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[biz]"
-                          dataType="i8"
+                          dataType="r4"
                           name="biz" />
                         <externalMetadataColumn
                           refId="Package\Staging\Fulldataset\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cleanliness_rating]"
-                          dataType="i8"
+                          dataType="r4"
                           name="cleanliness_rating" />
                         <externalMetadataColumn
                           refId="Package\Staging\Fulldataset\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[guest_satisfaction_overall]"
-                          dataType="i8"
+                          dataType="r4"
                           name="guest_satisfaction_overall" />
                         <externalMetadataColumn
                           refId="Package\Staging\Fulldataset\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[bedrooms]"
-                          dataType="i8"
+                          dataType="r4"
                           name="bedrooms" />
                         <externalMetadataColumn
                           refId="Package\Staging\Fulldataset\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dist]"
-                          dataType="r8"
+                          dataType="r4"
                           name="dist" />
                         <externalMetadataColumn
                           refId="Package\Staging\Fulldataset\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[metro_dist]"
-                          dataType="r8"
+                          dataType="r4"
                           name="metro_dist" />
                         <externalMetadataColumn
                           refId="Package\Staging\Fulldataset\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lng]"
-                          dataType="r8"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="lng" />
                         <externalMetadataColumn
                           refId="Package\Staging\Fulldataset\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
-                          dataType="r8"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
                           name="lat" />
                         <externalMetadataColumn
                           refId="Package\Staging\Fulldataset\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[european_city]"
@@ -9133,7 +9079,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{0E293814-FBF5-453B-86C5-65D66AB8A8C5}"
+      DTS:DTSID="{3FF099E0-B083-4361-8CAB-D703D2ABCF84}"
       DTS:From="Package\Schema Check"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -9141,7 +9087,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{A9431C58-0FB9-4082-85BD-F8A80F293FB1}"
+      DTS:DTSID="{B56323A0-9437-457E-B100-49E934C9E2E3}"
       DTS:From="Package\Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -9193,7 +9139,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
           PanelSize="383,202"
           Size="383,245"
           Id="Package\Create Views"
-          TopLeft="1260.14285714286,444.142857142857" />
+          TopLeft="1346.89285714286,614.642857142857" />
         <NodeLayout
           Size="179,42"
           Id="Package\Dimensions\Dim attraction_index"
@@ -9209,7 +9155,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
         <NodeLayout
           Size="199,42"
           Id="Package\Dimensions\Dim distance from metro"
-          TopLeft="293.5,181.5" />
+          TopLeft="292.5,181.5" />
         <NodeLayout
           Size="228,42"
           Id="Package\Dimensions\Dim guest_satisfaction_overall"
@@ -9360,30 +9306,30 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dimensions.PrecedenceConstraints[Constraint 4]"
-          TopLeft="488.166666666667,47.5">
+          TopLeft="481.9,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-95.1666666666667,134"
+              EndConnector="-89.9,134"
               Start="0,0"
-              End="-95.1666666666667,126.5">
+              End="-89.9,126.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.2821723730815" />
+                    End="0,55.9970348406227" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,59.2821723730815"
-                    Point2="0,63.2821723730815"
-                    Point3="-4,63.2821723730815" />
+                    Point1="0,55.9970348406227"
+                    Point2="0,59.9970348406227"
+                    Point3="-4,59.9970348406227" />
                   <mssgle:LineSegment
-                    End="-91.1666666666667,63.2821723730815" />
+                    End="-85.9,59.9970348406227" />
                   <mssgle:CubicBezierSegment
-                    Point1="-91.1666666666667,63.2821723730815"
-                    Point2="-95.1666666666667,63.2821723730815"
-                    Point3="-95.1666666666667,67.2821723730815" />
+                    Point1="-85.9,59.9970348406227"
+                    Point2="-89.9,59.9970348406227"
+                    Point3="-89.9,63.9970348406227" />
                   <mssgle:LineSegment
-                    End="-95.1666666666667,126.5" />
+                    End="-89.9,126.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9534,7 +9480,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
           PanelSize="1090,301"
           Size="1090,344"
           Id="Package\Dimensions"
-          TopLeft="59,412" />
+          TopLeft="145.75,591.25" />
         <NodeLayout
           Size="142,42"
           Id="Package\Fact table\fact euroBnB"
@@ -9544,7 +9490,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
           Id="Package\Fact table\Fact table creation"
           TopLeft="5.5,5.5" />
         <EdgeLayout
-          Id="Package\Fact table.PrecedenceConstraints[Constraint 2]"
+          Id="Package\Fact table.PrecedenceConstraints[Constraint]"
           TopLeft="174.5,26">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9571,15 +9517,15 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
           PanelSize="372,111"
           Size="372,154"
           Id="Package\Fact table"
-          TopLeft="1265,249" />
+          TopLeft="1271.75,349.25" />
         <NodeLayout
           Size="108,42"
           Id="Package\Reset"
-          TopLeft="1294.57142857143,93.285714285714" />
+          TopLeft="1423.57142857143,116.285714285714" />
         <NodeLayout
           Size="153,42"
           Id="Package\Schema Check"
-          TopLeft="37,34" />
+          TopLeft="93.25,32.25" />
         <NodeLayout
           Size="133,42"
           Id="Package\Staging\Fulldataset"
@@ -9677,36 +9623,36 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="547,261"
-          Size="547,304"
+          PanelSize="547,270"
+          Size="547,313"
           Id="Package\Staging"
-          TopLeft="288,74" />
+          TopLeft="316.5,202.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="190,55">
+          TopLeft="169.75,74.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="98,171"
+              EndConnector="420.25,128.25"
               Start="0,0"
-              End="90.5,171">
+              End="420.25,120.75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="45,0" />
+                    End="0,60.125" />
                   <mssgle:CubicBezierSegment
-                    Point1="45,0"
-                    Point2="49,0"
-                    Point3="49,4" />
+                    Point1="0,60.125"
+                    Point2="0,64.125"
+                    Point3="4,64.125" />
                   <mssgle:LineSegment
-                    End="49,167" />
+                    End="416.25,64.125" />
                   <mssgle:CubicBezierSegment
-                    Point1="49,167"
-                    Point2="49,171"
-                    Point3="53,171" />
+                    Point1="416.25,64.125"
+                    Point2="420.25,64.125"
+                    Point3="420.25,68.125" />
                   <mssgle:LineSegment
-                    End="90.5,171" />
+                    End="420.25,120.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9717,30 +9663,30 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="561.5,378">
+          TopLeft="590,515.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="42.5,34"
+              EndConnector="-79.5833333333334,75.75"
               Start="0,0"
-              End="42.5,26.5">
+              End="-79.5833333333334,68.25">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13" />
+                    End="0,41.3833821912789" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13"
-                    Point2="0,17"
-                    Point3="4,17" />
+                    Point1="0,41.3833821912789"
+                    Point2="0,45.3833821912789"
+                    Point3="-4,45.3833821912789" />
                   <mssgle:LineSegment
-                    End="38.5,17" />
+                    End="-75.5833333333334,45.3833821912789" />
                   <mssgle:CubicBezierSegment
-                    Point1="38.5,17"
-                    Point2="42.5,17"
-                    Point3="42.5,21" />
+                    Point1="-75.5833333333334,45.3833821912789"
+                    Point2="-79.5833333333334,45.3833821912789"
+                    Point3="-79.5833333333334,49.3833821912789" />
                   <mssgle:LineSegment
-                    End="42.5,26.5" />
+                    End="-79.5833333333334,68.25" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9751,30 +9697,30 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1149,584">
+          TopLeft="871.083333333333,591.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="116,-258"
+              EndConnector="526,-88"
               Start="0,0"
-              End="108.5,-258">
+              End="526,-80.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="54,0" />
+                    End="0,-39.845290447694" />
                   <mssgle:CubicBezierSegment
-                    Point1="54,0"
-                    Point2="58,0"
-                    Point3="58,-4" />
+                    Point1="0,-39.845290447694"
+                    Point2="0,-43.845290447694"
+                    Point3="4,-43.845290447694" />
                   <mssgle:LineSegment
-                    End="58,-254" />
+                    End="522,-43.845290447694" />
                   <mssgle:CubicBezierSegment
-                    Point1="58,-254"
-                    Point2="58,-258"
-                    Point3="62,-258" />
+                    Point1="522,-43.845290447694"
+                    Point2="526,-43.845290447694"
+                    Point3="526,-47.845290447694" />
                   <mssgle:LineSegment
-                    End="108.5,-258" />
+                    End="526,-80.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9785,18 +9731,30 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="1451.32142857143,403">
+          TopLeft="1518.41666666667,503.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.1428571428571"
+              EndConnector="19.9761904761933,111.392857142857"
               Start="0,0"
-              End="0,33.6428571428571">
+              End="19.9761904761933,103.892857142857">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.6428571428571" />
+                    End="0,40.8433771795655" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.8433771795655"
+                    Point2="0,44.8433771795655"
+                    Point3="4,44.8433771795655" />
+                  <mssgle:LineSegment
+                    End="15.9761904761933,44.8433771795655" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.9761904761933,44.8433771795655"
+                    Point2="19.9761904761933,44.8433771795655"
+                    Point3="19.9761904761933,48.8433771795655" />
+                  <mssgle:LineSegment
+                    End="19.9761904761933,103.892857142857" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10018,9 +9976,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10066,86 +10022,84 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="186,42"
-          Id="Package\Dimensions\Dim distance from center\OLE DB Destination 1"
-          TopLeft="727,348" />
-        <NodeLayout
           Size="157,42"
           Id="Package\Dimensions\Dim distance from center\OLE DB Source"
           TopLeft="312,127" />
         <NodeLayout
           Size="177,42"
           Id="Package\Dimensions\Dim distance from center\OLE DB Destination"
-          TopLeft="525,236" />
-        <EdgeLayout
-          Id="Package\Dimensions\Dim distance from center.Paths[OLE DB Destination Error Output]"
-          TopLeft="613.5,278">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="206.5,70"
-              Start="0,0"
-              End="206.5,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31"
-                    Point2="0,35"
-                    Point3="4,35" />
-                  <mssgle:LineSegment
-                    End="202.5,35" />
-                  <mssgle:CubicBezierSegment
-                    Point1="202.5,35"
-                    Point2="206.5,35"
-                    Point3="206.5,39" />
-                  <mssgle:LineSegment
-                    End="206.5,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="30.04109375,40,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="541,228" />
         <EdgeLayout
           Id="Package\Dimensions\Dim distance from center.Paths[OLE DB Source Output]"
           TopLeft="390.5,169">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="223,67"
+              EndConnector="239,59"
               Start="0,0"
-              End="223,59.5">
+              End="239,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.5" />
+                    End="0,25.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.5"
-                    Point2="0,33.5"
-                    Point3="4,33.5" />
+                    Point1="0,25.5"
+                    Point2="0,29.5"
+                    Point3="4,29.5" />
                   <mssgle:LineSegment
-                    End="219,33.5" />
+                    End="235,29.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="219,33.5"
-                    Point2="223,33.5"
-                    Point3="223,37.5" />
+                    Point1="235,29.5"
+                    Point2="239,29.5"
+                    Point3="239,33.5" />
                   <mssgle:LineSegment
-                    End="223,59.5" />
+                    End="239,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Dimensions\Dim distance from center\OLE DB Destination 1"
+          TopLeft="850,339" />
+        <EdgeLayout
+          Id="Package\Dimensions\Dim distance from center.Paths[OLE DB Destination Error Output]"
+          TopLeft="629.5,270">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="313.5,69"
+              Start="0,0"
+              End="313.5,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="4,34.5" />
+                  <mssgle:LineSegment
+                    End="309.5,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="309.5,34.5"
+                    Point2="313.5,34.5"
+                    Point3="313.5,38.5" />
+                  <mssgle:LineSegment
+                    End="313.5,61.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="83.54109375,39.5,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10153,36 +10107,10 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Dimensions\Dim distance from center\OLE DB Destination 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Dimensions\Dim distance from center\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dimensions\Dim distance from center\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -10192,86 +10120,84 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="186,42"
-          Id="Package\Dimensions\Dim distance from metro\OLE DB Destination 1"
-          TopLeft="727,348" />
-        <NodeLayout
           Size="157,42"
           Id="Package\Dimensions\Dim distance from metro\OLE DB Source"
-          TopLeft="312,127" />
+          TopLeft="313,127" />
         <NodeLayout
           Size="177,42"
           Id="Package\Dimensions\Dim distance from metro\OLE DB Destination"
-          TopLeft="525,236" />
-        <EdgeLayout
-          Id="Package\Dimensions\Dim distance from metro.Paths[OLE DB Destination Error Output]"
-          TopLeft="613.5,278">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="206.5,70"
-              Start="0,0"
-              End="206.5,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31"
-                    Point2="0,35"
-                    Point3="4,35" />
-                  <mssgle:LineSegment
-                    End="202.5,35" />
-                  <mssgle:CubicBezierSegment
-                    Point1="202.5,35"
-                    Point2="206.5,35"
-                    Point3="206.5,39" />
-                  <mssgle:LineSegment
-                    End="206.5,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="30.04109375,40,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="542,248" />
         <EdgeLayout
           Id="Package\Dimensions\Dim distance from metro.Paths[OLE DB Source Output]"
-          TopLeft="390.5,169">
+          TopLeft="391.5,169">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="223,67"
+              EndConnector="239,79"
               Start="0,0"
-              End="223,59.5">
+              End="239,71.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.5" />
+                    End="0,35.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.5"
-                    Point2="0,33.5"
-                    Point3="4,33.5" />
+                    Point1="0,35.5"
+                    Point2="0,39.5"
+                    Point3="4,39.5" />
                   <mssgle:LineSegment
-                    End="219,33.5" />
+                    End="235,39.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="219,33.5"
-                    Point2="223,33.5"
-                    Point3="223,37.5" />
+                    Point1="235,39.5"
+                    Point2="239,39.5"
+                    Point3="239,43.5" />
                   <mssgle:LineSegment
-                    End="223,59.5" />
+                    End="239,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Dimensions\Dim distance from metro\OLE DB Destination 1"
+          TopLeft="818,351" />
+        <EdgeLayout
+          Id="Package\Dimensions\Dim distance from metro.Paths[OLE DB Destination Error Output]"
+          TopLeft="630.5,290">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="280.5,61"
+              Start="0,0"
+              End="280.5,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="4,30.5" />
+                  <mssgle:LineSegment
+                    End="276.5,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="276.5,30.5"
+                    Point2="280.5,30.5"
+                    Point3="280.5,34.5" />
+                  <mssgle:LineSegment
+                    End="280.5,53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="67.04109375,35.5,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10279,36 +10205,10 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Dimensions\Dim distance from metro\OLE DB Destination 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Dimensions\Dim distance from metro\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dimensions\Dim distance from metro\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -10396,9 +10296,7 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10696,13 +10594,13 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="157,42"
-          Id="Package\Dimensions\dim stats\OLE DB Source"
-          TopLeft="393,86" />
-        <NodeLayout
           Size="186,42"
           Id="Package\Dimensions\dim stats\OLE DB Destination 1"
           TopLeft="940,295" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Dimensions\dim stats\OLE DB Source"
+          TopLeft="393,86" />
         <NodeLayout
           Size="177,42"
           Id="Package\Dimensions\dim stats\OLE DB Destination"
@@ -10774,20 +10672,14 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dimensions\dim stats\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Dimensions\dim stats\OLE DB Destination 1">
     <Properties>
@@ -10798,6 +10690,14 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions\dim stats\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -10952,33 +10852,33 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
         <NodeLayout
           Size="177,42"
           Id="Package\Fact table\fact euroBnB\OLE DB Destination"
-          TopLeft="535,165" />
+          TopLeft="591,177" />
         <EdgeLayout
           Id="Package\Fact table\fact euroBnB.Paths[OLE DB Source Output]"
           TopLeft="417.5,111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="206,54"
+              EndConnector="262,66"
               Start="0,0"
-              End="206,46.5">
+              End="262,58.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23" />
+                    End="0,29" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23"
-                    Point2="0,27"
-                    Point3="4,27" />
+                    Point1="0,29"
+                    Point2="0,33"
+                    Point3="4,33" />
                   <mssgle:LineSegment
-                    End="202,27" />
+                    End="258,33" />
                   <mssgle:CubicBezierSegment
-                    Point1="202,27"
-                    Point2="206,27"
-                    Point3="206,31" />
+                    Point1="258,33"
+                    Point2="262,33"
+                    Point3="262,37" />
                   <mssgle:LineSegment
-                    End="206,46.5" />
+                    End="262,58.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10990,19 +10890,6 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact table\fact euroBnB\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Fact table\fact euroBnB\OLE DB Source">
     <Properties>
@@ -11023,29 +10910,29 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
         <NodeLayout
           Size="123,42"
           Id="Package\Staging\Fulldataset\Union All"
-          TopLeft="510,231" />
+          TopLeft="493,245" />
         <NodeLayout
           Size="177,42"
           Id="Package\Staging\Fulldataset\OLE DB Destination"
-          TopLeft="476,358" />
+          TopLeft="466,379" />
         <NodeLayout
           Size="166,42"
           Id="Package\Staging\Fulldataset\OLE DB Source 1"
           TopLeft="580,87" />
         <EdgeLayout
           Id="Package\Staging\Fulldataset.Paths[Union All Output 1]"
-          TopLeft="568,273">
+          TopLeft="554.5,287">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,85"
+              EndConnector="0,92"
               Start="0,0"
-              End="0,77.5">
+              End="0,84.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,77.5" />
+                    End="0,84.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11062,26 +10949,26 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-72.3333333333334,102"
+              EndConnector="-89.3333333333334,116"
               Start="0,0"
-              End="-72.3333333333334,94.5">
+              End="-89.3333333333334,108.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.414125200642" />
+                    End="0,64.7062600321027" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,56.414125200642"
-                    Point2="0,60.414125200642"
-                    Point3="-4,60.414125200642" />
+                    Point1="0,64.7062600321027"
+                    Point2="0,68.7062600321027"
+                    Point3="-4,68.7062600321027" />
                   <mssgle:LineSegment
-                    End="-68.3333333333334,60.414125200642" />
+                    End="-85.3333333333334,68.7062600321027" />
                   <mssgle:CubicBezierSegment
-                    Point1="-68.3333333333334,60.414125200642"
-                    Point2="-72.3333333333334,60.414125200642"
-                    Point3="-72.3333333333334,64.414125200642" />
+                    Point1="-85.3333333333334,68.7062600321027"
+                    Point2="-89.3333333333334,68.7062600321027"
+                    Point3="-89.3333333333334,72.7062600321027" />
                   <mssgle:LineSegment
-                    End="-72.3333333333334,94.5" />
+                    End="-89.3333333333334,108.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11098,26 +10985,26 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="164,104"
+              EndConnector="127.833333333333,118"
               Start="0,0"
-              End="164,96.5">
+              End="127.833333333333,110.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48" />
+                    End="0,65.8908507223114" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,48"
-                    Point2="0,52"
-                    Point3="4,52" />
+                    Point1="0,65.8908507223114"
+                    Point2="0,69.8908507223114"
+                    Point3="4,69.8908507223114" />
                   <mssgle:LineSegment
-                    End="160,52" />
+                    End="123.833333333333,69.8908507223114" />
                   <mssgle:CubicBezierSegment
-                    Point1="160,52"
-                    Point2="164,52"
-                    Point3="164,56" />
+                    Point1="123.833333333333,69.8908507223114"
+                    Point2="127.833333333333,69.8908507223114"
+                    Point3="127.833333333333,73.8908507223114" />
                   <mssgle:LineSegment
-                    End="164,96.5" />
+                    End="127.833333333333,110.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11289,6 +11176,71 @@ Where f.weekday_or_weekend = 'weekday' and [cost per night cad] &lt;= 10000</pro
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Staging\Loading Weekend data\Weekend\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions\Dim distance from center\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions\Dim distance from metro\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions\Dim distance from metro\OLE DB Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact table\fact euroBnB\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensions\Dim distance from center\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
