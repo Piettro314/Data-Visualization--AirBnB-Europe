@@ -10,6 +10,7 @@ The objective is to create a visualization that examines AirBnB data in Europe b
 Throughout my learning experience, I have come to realize that there are several methods to prepare data. One approach is to use Python and its libraries such as Pandas for cleaning and organizing data and Seaborn for gaining insights. Another option is to utilize SQL and its features such as joins, groupby, where statements, case statements, and CTE to design the data. There are also various other methods available.
 
 For this project SQL will be mainly utilized for structuring the Data in preparation for visualization. Data contains 20 CSVs weekend and weekdays divided up by [European cities](https://zenodo.org/record/4446043#.Y9Y9ENJBwUE).
+
 ## SSIS Package
 * To import into the SQL database a Sequel Server Integration Services (SSIS) package was utilized
 
