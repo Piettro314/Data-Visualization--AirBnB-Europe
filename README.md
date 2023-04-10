@@ -6,44 +6,6 @@ The Kimball methodology of data warehousing is a technique used to determine how
 # Objective of the project
 The objective is to create a visualization that examines AirBnB data in Europe by following a series of steps, including exploration, modeling, ETL, and finally visualization. The ultimate goal is to forecast rental rates for both business and leisure travelers in various European cities.
 
-# Exploratory Data Analysis (EDA)
-Undoubtedly, one of the most crucial stages in a data science project is exploratory analysis, which marks the inception of visualization ideas. The following descriptive analysis tables were generated from the dataset using the following Python code.
-
-```
-tukey_df = pd.DataFrame(df.groupby('european_city')['bedrooms'].mean())
-tukey_df['std # bedrooms'] = df.groupby('european_city')['bedrooms'].std()
-tukey_df['mean Capacity'] = df.groupby('european_city')['person_capacity'].mean()
-tukey_df['std Capacity'] = df.groupby('european_city')['person_capacity'].std()
-tukey_df['mean Overall satisfaction'] = df.groupby('european_city')['guest_satisfaction_overall'].mean()
-tukey_df['std Overall satisfaction'] = df.groupby('european_city')['guest_satisfaction_overall'].std()
-tukey_df['mean Cleanliness Rating'] = df.groupby('european_city')['cleanliness_rating'].mean()
-tukey_df['std Cleanliness Rating'] = df.groupby('european_city')['cleanliness_rating'].std()
-tukey_df.columns = ['mean # bedrooms', 'std # bedrooms', 'mean Capacity', 'std Capacity',
-       'mean Overall satisfaction', 'std Overall satisfaction',
-       'mean Cleanliness Rating', 'std Cleanliness Rating']
-tukey_df.index.names = ['city']
-tukey_df
-```
-<img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/Descriptive%20table.png" align="center">
-
-```
-price_df = pd.DataFrame(df['european_city'].value_counts())
-price_df['avg cost per night'] = df.groupby('european_city')['cost per night cad'].mean()
-price_df['std cost per night'] = df.groupby('european_city')['cost per night cad'].std()
-price_df['median cost per night'] = df.groupby('european_city')['cost per night cad'].median()
-price_df.columns = ['Number of listings', 'avg cost per night', 'std cost per night',
-       'median cost per night']
-price_df.index.names = ['city']
-price_df.sort_index()
-```
-
-<img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/Descriptive%20cost%20table.png" align="center">
-
-
-
-### Data Validation 
-After creating the above tables the data was validated against the source: https://www.sciencedirect.com/science/article/pii/S0261517721000388?via%3Dihub#tbl4
-
 # Data Preparation
 Throughout my learning experience, I have come to realize that there are several methods to prepare data. One approach is to use Python and its libraries such as Pandas for cleaning and organizing data and Seaborn for gaining insights. Another option is to utilize SQL and its features such as joins, groupby, where statements, case statements, and CTE to design the data. There are also various other methods available.
 
@@ -94,6 +56,50 @@ See SQL code folder for all SQL used within this project
 
 <img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/Star%20Schema.gif" align="center">
 <br>
+
+
+# Exploratory Data Analysis (EDA)- With Python
+Undoubtedly, one of the most crucial stages in a data science project is exploratory analysis, which marks the inception of visualization ideas. The following descriptive analysis tables were generated from the dataset using the following Python code.
+
+```
+tukey_df = pd.DataFrame(df.groupby('european_city')['bedrooms'].mean())
+tukey_df['std # bedrooms'] = df.groupby('european_city')['bedrooms'].std()
+tukey_df['mean Capacity'] = df.groupby('european_city')['person_capacity'].mean()
+tukey_df['std Capacity'] = df.groupby('european_city')['person_capacity'].std()
+tukey_df['mean Overall satisfaction'] = df.groupby('european_city')['guest_satisfaction_overall'].mean()
+tukey_df['std Overall satisfaction'] = df.groupby('european_city')['guest_satisfaction_overall'].std()
+tukey_df['mean Cleanliness Rating'] = df.groupby('european_city')['cleanliness_rating'].mean()
+tukey_df['std Cleanliness Rating'] = df.groupby('european_city')['cleanliness_rating'].std()
+tukey_df.columns = ['mean # bedrooms', 'std # bedrooms', 'mean Capacity', 'std Capacity',
+       'mean Overall satisfaction', 'std Overall satisfaction',
+       'mean Cleanliness Rating', 'std Cleanliness Rating']
+tukey_df.index.names = ['city']
+tukey_df
+```
+<img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/Descriptive%20table.png" align="center">
+
+```
+price_df = pd.DataFrame(df['european_city'].value_counts())
+price_df['avg cost per night'] = df.groupby('european_city')['cost per night cad'].mean()
+price_df['std cost per night'] = df.groupby('european_city')['cost per night cad'].std()
+price_df['median cost per night'] = df.groupby('european_city')['cost per night cad'].median()
+price_df.columns = ['Number of listings', 'avg cost per night', 'std cost per night',
+       'median cost per night']
+price_df.index.names = ['city']
+price_df.sort_index()
+```
+
+<img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/Descriptive%20cost%20table.png" align="center">
+
+
+### Data Validation 
+After creating the above tables the data was validated against the source: https://www.sciencedirect.com/science/article/pii/S0261517721000388?via%3Dihub#tbl4
+
+#### Auto EDA
+ydata_profile libray was also used for insight into the data
+
+<img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/Descriptive%20table.png" align="center">
+
 
 
 # Visualization
