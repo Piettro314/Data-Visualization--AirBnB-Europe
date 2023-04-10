@@ -95,15 +95,15 @@ price_df.sort_index()
 ### Data Validation 
 After creating the above tables the data was validated against the source: https://www.sciencedirect.com/science/article/pii/S0261517721000388?via%3Dihub#tbl4
 
-#### Auto EDA
-ydata_profile libray was also used for insight into the data
+### Further Exploration
+ydata_profile library was also used for further insight into the data.
 
 <img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/EDA.gif" align="center">
 
 
 
 # Visualization
-When the data is arranged in a star schema, selecting the appropriate tool becomes a matter of personal preference as each tool has its own advantages and limitations. The subsequent video showcases a visualization created with Power BI, which I selected as the focus of my studies.
+When the data is arranged in a star schema and the data has been fully explored, selecting the appropriate tool becomes a matter of personal preference as each tool has its own advantages and limitations. The subsequent video showcases a visualization created with Power BI, which was selected because it was tool of focus of my studies.
 
 ###### YOU TUBE VIDEO LINK HERE
 
