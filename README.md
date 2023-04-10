@@ -98,7 +98,7 @@ After creating the above tables the data was validated against the source: https
 #### Auto EDA
 ydata_profile libray was also used for insight into the data
 
-<img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/Descriptive%20table.png" align="center">
+<img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/EDA.gif" align="center">
 
 
 
