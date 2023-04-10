@@ -1,7 +1,7 @@
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=50&pause=1000&color=000000&background=EBEBEB00&width=1500&height=200&lines=Creating+Business+Intelligence+Visualization)](https://git.io/typing-svg)
 
 # Preface
-The Kimball methodology of data warehousing is a technique used to determine how data is stored and later used for visual representation. There are various visualization tools like Power BI, Excel, and Tableau, and this project intends to showcase the process of creating visualizations while emphasizing that tool selection is based on individual preference, data availability, and suitability. 
+The Kimball methodology of data warehousing is a technique used to determine how data is stored and later used for visual representation. There are various visualization tools like Power BI, Excel, and Tableau, and this project intends to showcase the process of creating visualizations with an emphasize on the data because it is from my experience that tool selection is based on individual preference, data availability, and suitability. 
 
 # Objective of the project
 The objective is to create a visualization that examines AirBnB data in Europe by following a series of steps, including exploration, modeling, ETL, and finally visualization. The ultimate goal is to forecast rental rates for both business and leisure travelers in various European cities.
@@ -51,9 +51,7 @@ For this project SQL will be mainly utilized for structuring the Data in prepara
 ## SSIS Package
 * To import into the SQL database a Sequel Server Integration Services (SSIS) package was utilized
 
-<div>
 <img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/SSIS2.gif" align="center">
-</div>
 <br>
 
 <p>
@@ -94,21 +92,17 @@ See SQL code folder for all SQL used within this project
 
 2) Following the creation of each dimension, the data was organized into a central fact table and several dimension tables using primary and foreign key relationships, conforming to the star schema design.
 
-<div>
 <img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/Star%20Schema.gif" align="center">
-</div>
 <br>
 
 
-# Building Visualization
-Selecting a tool for visualization. Ease of use, Preference
-1) Wire frame BI canvas
-2) Build
+# Visualization
+When the data is arranged in a star schema, selecting the appropriate tool becomes a matter of personal preference as each tool has its own advantages and limitations. The subsequent video showcases a visualization created with Power BI, which I selected as the focus of my studies.
 
-# Pycaret
-Pycaret will be utilized for 2 main purposes.
-1) Mainly to create a predictive model for the prediction of AirBnB prices
-2) For quick analysis of the data taking note of feature importance and other insights for later visualization
+###### YOU TUBE VIDEO LINK HERE
+
+# Remarks
+Visualizations are a valuable instrument for gaining insights from data; nonetheless, they can only be generated once the data has been prepared and stored in a format that is readily available for reporting purposes. 
 
 # References
 
