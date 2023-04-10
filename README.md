@@ -24,11 +24,8 @@ tukey_df.columns = ['mean # bedrooms', 'std # bedrooms', 'mean Capacity', 'std C
 tukey_df.index.names = ['city']
 tukey_df
 ```
-<br>
-<div>
 <img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/Descriptive%20table.png" align="center">
-</div>
-<br>
+
 ```
 price_df = pd.DataFrame(df['european_city'].value_counts())
 price_df['avg cost per night'] = df.groupby('european_city')['cost per night cad'].mean()
@@ -39,11 +36,10 @@ price_df.columns = ['Number of listings', 'avg cost per night', 'std cost per ni
 price_df.index.names = ['city']
 price_df.sort_index()
 ```
-<br>
-<div>
+
 <img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/Descriptive%20cost%20table.png" align="center">
-</div>
-<br>
+
+
 
 ### Data Validation 
 After creating the above tables the data was validated against the source: https://www.sciencedirect.com/science/article/pii/S0261517721000388?via%3Dihub#tbl4
