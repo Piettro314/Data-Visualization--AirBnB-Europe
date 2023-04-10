@@ -4,7 +4,49 @@
 The Kimball methodology of data warehousing is a technique used to determine how data is stored and later used for visual representation. There are various visualization tools like Power BI, Excel, and Tableau, and this project intends to showcase the process of creating visualizations while emphasizing that tool selection is based on individual preference, data availability, and suitability. 
 
 # Objective of the project
-To illustrate the process of developing a visualization to analyze AirBnB data in Europe. The aim is to project rental rates for both leisure and business travellers in European cities and build a model to forecast prices.
+The objective is to create a visualization that examines AirBnB data in Europe by following a series of steps, including exploration, modeling, ETL, and finally visualization. The ultimate goal is to forecast rental rates for both business and leisure travelers in various European cities.
+
+# Exploratory Data Analysis (EDA)
+Undoubtedly, one of the most crucial stages in a data science project is exploratory analysis, which marks the inception of visualization ideas. The following descriptive analysis tables were generated from the dataset using the following Python code.
+
+```
+tukey_df = pd.DataFrame(df.groupby('european_city')['bedrooms'].mean())
+tukey_df['std # bedrooms'] = df.groupby('european_city')['bedrooms'].std()
+tukey_df['mean Capacity'] = df.groupby('european_city')['person_capacity'].mean()
+tukey_df['std Capacity'] = df.groupby('european_city')['person_capacity'].std()
+tukey_df['mean Overall satisfaction'] = df.groupby('european_city')['guest_satisfaction_overall'].mean()
+tukey_df['std Overall satisfaction'] = df.groupby('european_city')['guest_satisfaction_overall'].std()
+tukey_df['mean Cleanliness Rating'] = df.groupby('european_city')['cleanliness_rating'].mean()
+tukey_df['std Cleanliness Rating'] = df.groupby('european_city')['cleanliness_rating'].std()
+tukey_df.columns = ['mean # bedrooms', 'std # bedrooms', 'mean Capacity', 'std Capacity',
+       'mean Overall satisfaction', 'std Overall satisfaction',
+       'mean Cleanliness Rating', 'std Cleanliness Rating']
+tukey_df.index.names = ['city']
+tukey_df
+```
+<br>
+<div>
+<img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/Descriptive%20table.png" align="center">
+</div>
+<br>
+```
+price_df = pd.DataFrame(df['european_city'].value_counts())
+price_df['avg cost per night'] = df.groupby('european_city')['cost per night cad'].mean()
+price_df['std cost per night'] = df.groupby('european_city')['cost per night cad'].std()
+price_df['median cost per night'] = df.groupby('european_city')['cost per night cad'].median()
+price_df.columns = ['Number of listings', 'avg cost per night', 'std cost per night',
+       'median cost per night']
+price_df.index.names = ['city']
+price_df.sort_index()
+```
+<br>
+<div>
+<img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/Descriptive%20cost%20table.png" align="center">
+</div>
+<br>
+
+### Data Validation 
+After creating the above tables the data was validated against the source: https://www.sciencedirect.com/science/article/pii/S0261517721000388?via%3Dihub#tbl4
 
 # Data Preparation
 Throughout my learning experience, I have come to realize that there are several methods to prepare data. One approach is to use Python and its libraries such as Pandas for cleaning and organizing data and Seaborn for gaining insights. Another option is to utilize SQL and its features such as joins, groupby, where statements, case statements, and CTE to design the data. There are also various other methods available.
@@ -71,4 +113,12 @@ Selecting a tool for visualization. Ease of use, Preference
 Pycaret will be utilized for 2 main purposes.
 1) Mainly to create a predictive model for the prediction of AirBnB prices
 2) For quick analysis of the data taking note of feature importance and other insights for later visualization
-	
+
+# References
+
+Airbnb prices in European cities. Kaggle. (n.d.). Retrieved April 10, 2023, from https://www.kaggle.com/datasets/thedevastator/airbnb-prices-in-european-cities 
+
+Gyódi, K., &amp; Nawaro, Ł. (2021, January 13). Determinants of airbnb prices in European cities: A Spatial Econometrics Approach (supplementary material). Zenodo. Retrieved April 10, 2023, from https://zenodo.org/record/4446043#.Y9Y9ENJBwUE 
+
+Author links open overlay panelKristóf Gyódi, Highlights•Airbnb prices are spatially dependent.•Attractiveness of neighbourhoods can be measured with TripAdvisor data.•Accessibility of tourist attractions is a major price driver.•Multi-source spatial models provide best fit to data., &amp; AbstractWe examine the determinants of Airbnb prices in 10 major EU cities. (2021, April 8). Determinants of airbnb prices in European cities: A spatial econometrics approach. Tourism Management. Retrieved April 10, 2023, from https://www.sciencedirect.com/science/article/pii/S0261517721000388?via%3Dihub#tbl4 
+
