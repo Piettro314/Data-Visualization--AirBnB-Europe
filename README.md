@@ -16,6 +16,8 @@ For this project SQL will be mainly utilized for structuring the Data in prepara
 <div>
 <img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/SSIS2.gif" align="center">
 </div>
+<br>
+
 <p>
 What is the rationale for using SSIS?
 </p>
@@ -54,7 +56,10 @@ See SQL code folder for all SQL used within this project
 
 2) Following the creation of each dimension, the data was organized into a central fact table and several dimension tables using primary and foreign key relationships, conforming to the star schema design.
 
-*Star Schema GIf
+<div>
+<img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/Star%20Schema.gif" align="center">
+</div>
+<br>
 
 
 # Building Visualization
