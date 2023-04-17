@@ -106,7 +106,7 @@ ydata_profile library was also used for further insight into the data.
 # Visualization
 When the data is arranged in a star schema and the data has been fully explored, selecting the appropriate tool becomes a matter of personal preference as each tool has its own advantages and limitations. The subsequent video showcases a visualization created with Power BI, which was selected because it was tool of focus of my studies.
 
-###### YOU TUBE VIDEO LINK HERE
+<img src="https://github.com/Piettro314/Data-Visualization--AirBnB-Europe/blob/main/Media%20Content/Cover.png" align="center">
 
 # Remarks
 Visualizations are a valuable instrument for gaining insights from data; nonetheless, they can only be generated once the data has been prepared and stored in a format that is readily available for reporting purposes. 
