@@ -111,6 +111,8 @@ When the data is arranged in a star schema and the data has been fully explored,
 # Remarks
 Visualizations are a valuable instrument for gaining insights from data; nonetheless, they can only be generated once the data has been prepared and stored in a format that is readily available for reporting purposes. 
 
+Once the data is prepared, we can take a further step towards predictive modeling. For more information on this topic, please refer to the following link on [predictive modeling with pycaret.](https://github.com/Piettro314/Prediction-with-Pycaret)
+
 # References
 
 Airbnb prices in European cities. Kaggle. (n.d.). Retrieved April 10, 2023, from https://www.kaggle.com/datasets/thedevastator/airbnb-prices-in-european-cities 
