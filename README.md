@@ -4,7 +4,7 @@
 The Kimball methodology of data warehousing is a technique used to determine how data is stored and later used for visual representation. There are various visualization tools like Power BI, Excel, and Tableau, and this project intends to showcase the process of creating visualizations with an emphasize on the data because it is from my experience that tool selection is based on individual preference, data availability, and suitability. 
 
 # Objective of the project
-The objective is to create a visualization that examines AirBnB data in Europe by following a series of steps, including exploration, modeling, ETL, and finally visualization. The ultimate goal is to forecast rental rates for both business and leisure travelers in various European cities.
+The objective is to create a visualization that examines AirBnB data in Europe by following a series of steps, including exploration, modeling, ETL, and finally visualization. 
 
 # Data Preparation
 Throughout my learning experience, I have come to realize that there are several methods to prepare data. One approach is to use Python and its libraries such as Pandas for cleaning and organizing data and Seaborn for gaining insights. Another option is to utilize SQL and its features such as joins, groupby, where statements, case statements, and CTE to design the data. There are also various other methods available.
