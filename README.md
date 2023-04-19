@@ -1,4 +1,4 @@
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=50&pause=1000&color=000000&background=EBEBEB00&width=1500&height=200&lines=Creating+Business+Intelligence+Visualization)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=50&pause=1000&color=000000&background=EBEBEB00&width=1500&height=200&lines=Creating+Business+Intelligence+Visualizations)](https://git.io/typing-svg)
 
 # Preface
 The Kimball methodology of data warehousing is a technique used to determine how data is stored and later used for visual representation. There are various visualization tools like Power BI, Excel, and Tableau, and this project intends to showcase the process of creating visualizations with an emphasize on the data because it is from my experience that tool selection is based on individual preference, data availability, and suitability. 
